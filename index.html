@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi</title>
+</head>
+<style>
+    body {
+        background-color: grey;
+    }
+
+    #calc {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .main {
+        width: 40vw;
+        height: 10vh;
+        background-color: rgb(72, 6, 255);
+        margin: 50px 300px;
+        padding: 30px;
+    }
+
+    #first {
+        padding: 5px;
+        margin: 5px
+    }
+
+    #second {
+        padding: 5px;
+        margin: 5px
+    }
+
+    #third {
+        padding: 5px;
+        margin: 5px
+    }
+
+    #fourth {
+        padding: 5px;
+        margin: 5px
+    }
+</style>
+
+<body>
+    <div class="main">
+        <input type="number" placeholder="Enter 1st number" id="first" />
+        <input type="number" placeholder="Enter 2nd number" id="second" />
+        <input type="number" placeholder="Enter 3rd number" id="third" />
+        <input type="number" placeholder="Enter 4th number" id="fourth" />
+        <button onclick="fun()" id="calc">calculate</button>
+        <h1>Result:
+            <span id="res"></span>
+        </h1>
+    </div>
+</body>
+<script>
+    function fun() {
+        var a = (document.querySelector("#first").value)
+        var b = (document.querySelector("#second").value)
+        var c = (document.querySelector("#third").value)
+        var d = (document.querySelector("#fourth").value)
+
+        function fun1(s) {
+            return function (t) {
+                return function (u) {
+                    return function (v) {
+                        return (s * t * u * v);
+                    };
+                };
+            };
+        };
+
+
+        document.getElementById("res").innerHTML = " " + (fun1(a)(b)(c)(d));
+
+        console.log(fun1(a)(b)(c)(d));
+    }
+</script>
+
+</html>
